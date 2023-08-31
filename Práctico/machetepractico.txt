@@ -50,7 +50,7 @@ Tambien se suspende la búsqueda hasta que m=estado objetivo
 La diferencia es como trato a la lista abierta, porque pongo primero a los hijos de m para seguir la busqueda en profundidad
 Nuevamente la respuesta final seria el camino al cual llegue al primer nodo objetivo.
 
-BÚSQUEDA INFORMADA: la búsqueda informada con heuristica, ahce mas eficiente la búsqueda saltando nodos en distintas ramas.
+BÚSQUEDA INFORMADA: la búsqueda informada con heuristica, hace mas eficiente la búsqueda saltando nodos en distintas ramas.
 como plantear la heuristica? la heuristica indica medida de deseabilidad.
 Si el estado objetivo tiene una heuristica = 0 entonces va a ser un problema de minimización
 Por ejemplo: en el problema del puzzle puedo plantear:
