@@ -1,0 +1,90 @@
+Búsqueda: https://www.youtube.com/watch?v=XnWlex-ppvA&list=PLsI9mUiT17yyWuesfvYmHRtKyacQIsWeP&index=12
+Planificación: https://www.youtube.com/watch?v=50cQi7djelU&list=PLsI9mUiT17yyWuesfvYmHRtKyacQIsWeP&index=20
+Logica Difusa: https://www.youtube.com/watch?v=2y8jXKd8b3I&list=PLsI9mUiT17yyWuesfvYmHRtKyacQIsWeP&index=22
+
+BÚSQUEDA NO INFORMADA: PRIMERO EN ANCHURA
+Recorro el arbol a lo ancho. Si el enunciado no hace ninguna aclaración, recorremos de izquierda a derecha.
+voy a tener una tabla con tres columnas:
+	1- Columna con el nodo en donde estoy posicionado (m = nodo)
+	2- Columna de la lista abierta, donde pongo los nodos que voy a visitar. 
+	3- Columna de la lista cerrada, donde pongo los nodos que ya visite. 
+La primera fila de la tabla:
+	1- Columna 1: vacío
+	2- Columna 2: nodo raíz. 
+	3- Columna 3: vacía
+La segunda fila de la tabla:
+	1- Columna 1: nodo raíz
+	2- Columna 2: hijos del nodo raíz. 
+	3- Columna 3: nodo raíz.
+Aca preguntamos si el nodo en el que estoy posicionado es alguno de los nodo meta? 
+si la respuesta es si, se corta la busqueda
+si la respuesta es no, se continua la búsqueda.
+La tercera fila de la tabla:
+	1- Columna 1: el primero que haya estado en la lista abierta de la columna 2 en el paso anterior (sigue el orden del nivel)
+	2- Columna 2: los que no se eligieron de la lista abierta de la columna 2 en el paso anterior + el hijo del nodo de la columna 1 del paso actual.
+	3- Columna 3: nodo raíz y nodo de la columna 1 del paso actual
+Se repite este paso hasta llegar a la meta.
+Se suspende la búsqueda cuando se encuentra el primer nodo meta. 
+La respuesta final del ejercicio tiene que ser el camino con todos los nodos (la lista cerrada o todos los m visitados)
+
+
+BÚSQUEDA NO INFORMADA: PRIMERO EN PROFUNDIDAD
+Recorro el arbol por rama, hasta la hoja.
+Nos manejamos igual que la otra búsqueda, con una tabla de 3 columnas:
+	1- Columna con el nodo en donde estoy posicionado (m = nodo)
+	2- Columna de la lista abierta, donde pongo los nodos que voy a visitar. 
+	3- Columna de la lista cerrada, donde pongo los nodos que ya visite. 
+La primera fila de la tabla:
+	1- Columna 1: vacío
+	2- Columna 2: nodo raíz. 
+	3- Columna 3: vacía
+La segunda fila de la tabla:
+	1- Columna 1: nodo raíz
+	2- Columna 2: hijos del nodo raíz. 
+	3- Columna 3: nodo raíz.
+La tercera fila de la tabla:
+	1- Columna 1: el primero que haya estado en la lista abierta de la columna 2 en el paso anterior 
+	2- Columna 2: el hijo o los hijos del nodo de la columna 1 + los que no se eligieron de la lista abierta de la columna 2 en el paso anterior
+	3- Columna 3: nodo raíz y nodo de la columna 1 del paso actual
+Tambien se suspende la búsqueda hasta que m=estado objetivo
+La diferencia es como trato a la lista abierta, porque pongo primero a los hijos de m para seguir la busqueda en profundidad
+Nuevamente la respuesta final seria el camino al cual llegue al primer nodo objetivo.
+
+BÚSQUEDA INFORMADA: la búsqueda informada con heuristica, ahce mas eficiente la búsqueda saltando nodos en distintas ramas.
+como plantear la heuristica? la heuristica indica medida de deseabilidad.
+Si el estado objetivo tiene una heuristica = 0 entonces va a ser un problema de minimización
+Por ejemplo: en el problema del puzzle puedo plantear:
+	- cuantas fichas estan bien ubicadas?
+	- cuantas fichas estan mal ubicadas?
+
+
+BÚSQUEDA INFORMADA: PRIMERO EL MEJOR
+Combina primero en anchura y primero en profundidad, cambiando la ruta cuando encuentra alguna mas prometedora. 
+Nos manejamos igual que la otra búsqueda, con una tabla de 3 columnas, poniendo SIEMPRE la heuristica asociada al nodo y el supraindice con el padre:
+	1- Columna con el nodo en donde estoy posicionado (m = nodo)
+	2- Columna de la lista abierta, donde pongo los nodos que voy a visitar. 
+	3- Columna de la lista cerrada, donde pongo los nodos que ya visite. 
+La primera fila de la tabla:
+	1- Columna 1: vacío
+	2- Columna 2: nodo raíz(h)
+	3- Columna 3: vacía
+La segunda fila de la tabla:
+	1- Columna 1: nodo raíz(h)
+	2- Columna 2: hijos del nodo raíz(h). 
+	3- Columna 3: nodo raíz(h).
+La tercera fila de la tabla:
+	1- Columna 1: el de menor h que haya estado en la lista abierta en el paso anterior. 
+	2- Columna 2: el hijo o los hijos del nodo de la columna 1 (h) + los que no se eligieron de la lista abierta de la columna 2 en el paso anterior (h)
+	3- Columna 3: nodo raíz(h) y nodo de la columna 1 del paso actual(h)
+Se repite hasta que m= nodo objetivo
+En este metodo no hay nodos con misma heuristica
+La respuesta final esta dada revisando el supraindice del nodo objetivo y yendo para atras hasta el nodo raiz. 
+
+
+BÚSQUEDA INFORMADA: A*
+Variante de primero el mejor que tiene una heuristica compuesta por dos partes: g(n) + h(n)
+g(n) = costo del mejor camino encontrado hasta el momento desde la raiz hasta "n"
+h(n) = costo de alcanzar el nodo meta desde el nodo actual (nivel)
+Aca procedemos de la misma forma que el metodo anterior.
+Si hay nodos con el mismo valor de heuristica (al hacer f(n)+g(n)) se toma un criterio y debo respetar siempre el mismo criterio.
+Por ejemplo: puedo priorizar el nodo mas viejo pero debo continuar con ese criterio de ahi en adelante.

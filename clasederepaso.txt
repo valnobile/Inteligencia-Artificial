@@ -1,0 +1,49 @@
+El puntaje no es 0 o 20 si no que hay un puntaje intermedio dependiendo la calidad de la respuesta
+3 preguntas teoricas 25p
+
+Capacidad para elegir método 20p
+pueden darnos un caso y nosotros explicar cual es el mejor metodo para aplicar
+
+capacidad para ejecutar el método 15p
+esto es resolver lit el ejercicio
+
+capacidad para plantear la solución y evaluar resultados 40p
+por ejemplo cuando en log difusa nos dan una variable y... y nos pueden preguntar por que ese resultado
+
+logica entra solo al teorico
+logica difusa si va para el practico
+ejercicios de búsqueda, planificación, logica difusa
+duración del examen: de 10 a 12.
+todo en papel
+nos van a dar el árbol de una resolución y aplicar el método ahí, de ahi nos pueden preguntar sobre 
+la situación problema con esa técnica
+metodos NO INFORMADOS -> dos, en anchura y en profundidad
+PONER EL CAMINO
+  si es NO INFORMADO van a ser todos los nodos que yo toque hasta la resolución, camino sol=cam busq ?
+	en primero en profundidad puedo trabajar con supraindice pero da igual si no lo usamos, solo el camino busq va a ser mas corto
+  si es INFORMADO camino sol != camino busq porque voy saltando de nodos. A cada nodo ponerle arriba el padre que lo generó
+	ser coherente con el criterio de la heuristica, cuando tengo dos nodos a y b con misma heuristica, SIEMPRE priorizo el nodo b O SIEMPRE priorizo el nodo a
+	la heuristica nos la pueden dar o la tenemos que sacar de acuerdo a la siuación problema.
+	heuristica admisible, nos pueden dar a elegir entre dos, siempre es la que es menor al valor real del recorrido
+medida de complejidad: tablita o conceptualmente
+PREGUNTAS TEORICAS para LOG DIFUSA que representa cada valor, grado de pertenencia, significado de variables, etapas
+nos pueden dar las variables fusificadas y aplicar las reglas
+
+COMPLETAR PORTAFOLIO ANTES DEL 20 DE NOVIEMBRE CHEQUEAR LA LISTA 
+
+la idea es no preguntar cosas de memoria si no tener los conceptos claros para armar una respuesta no tan larga
+delta de adalain, error etc (esto creo que no va)
+por que se calcula de esa forma el resolvente
+justificar metodos 
+REVISAR MATERIAL COMPLEMENTARIO
+en el teorico: no son arboles de busqueda son metodos, entran primero en amplitud, primero en profundidad, primero el mejor y A*
+busqueda, planificacion, agentes y logica (agentes y logica difusa, logica de primer orden y proposicional)
+que significa tal salida o tal resultado INTERPRETAR
+que metodo utilizarias, por que y a lo sumo explicar una parte del metodo
+si tenemos un metodo que es mejor que los otros porque no usamos siempre el mismo? 
+por que uso lo que uso?
+pordria resolverse con ambos metodos entonces por que elijo el que elijo
+logica o logica difusa la decision se toma despues de razonar pero el metodo tiene varias partes definidas y hay que entender por que esos pasos intermedios
+que pasa si falta una de esas partes explicar por que
+heuristica admisible:en A* tratamos de definir una heuristica optimista, que siempre nos diga que estamos mas cerca del objetivo de lo que realmente estamos
+porque asi el metodo se asegura que nos trae un camino corto para la solucion y en el menor tiempo posible, no busca otros mas largos.
