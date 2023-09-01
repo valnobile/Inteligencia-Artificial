@@ -1,0 +1,23 @@
+La planificación por pila de objetivos, trabaja la resolución como objetivos individuales que se tienen que cumplir bajo una estructura dinamica de pila.
+Me van a dar:
+un estado inicial con la posición de los bloques y brazo libre
+un estado final a la que tengo que llevar los bloques
+una tabla con los operadores que voy a usar para lograr el objetivo (puedo usar menos, no necesariamente todos)
+	Esta tabla tiene las pre condiciones para que se pueda aplicar el operador y las post condiciones en las que queda el objeto luego de aplicarlo.
+
+Vamos a suponer que trabajamos con un brazo robotico que tiene que estar libre para manejar los bloques. 
+Despejado: el bloque sin nada encima. 
+Primer paso de la resolución: describir el estado final paso a paso y el objetivo anidado. 
+Segundo paso: corroborar cada objetivo respecto al estado inicial, si se cumple o no.
+	Si se cumple el objetivo, lo saco de la pila de la resolución
+	Si no se cumple el objetivo, trabajo en ese tratando de que se cumpla. 
+
+En el paso de resolución siguiente:
+	pienso como cumplir el objetivo y se reemplaza ese paso con la acción que quiero realizar
+	pongo antes de esa acción, el objetivo anidado y los objetivos individuales.
+	chequeo si todas las precondiciones se cumplen
+		si se cumplen, la accion se realiza y el estado cambia -> paso la accion al plan
+		si no se cumplen, repito.
+
+
+Estado inicial de resolución -> Estado final

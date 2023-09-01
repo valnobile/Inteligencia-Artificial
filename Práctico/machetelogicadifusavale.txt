@@ -1,0 +1,41 @@
+Etapas de Log Difusa
+1. Fuzzificación de las entradas
+
+Tengo 3 conjuntos difusos dentro del rango en el que va la variable.
+	-Conjunto difuso bajo
+	-Conjunto difuso medio
+	-Conjunto Difuso alto
+Los valores de fuzzificacion van siempre entre 0 a 1. 
+Me viene con los datos:
+	- las graficas de las conjuntos 
+	- las funciones de membresia que utilizamos para calcular el grado de pertenencia de la variable a cada uno de los conjuntos
+Este paso se resuelve reemplazando el valor de la variable en cada funcion para obtener sus grados de pertenencia.
+Los valores de pertenencia tienen que dar entre 0 y 1
+
+Cuando tengo un grafico donde tengo que sacar la ecuación:
+y=y1/(x1-x0) * (x-x0)
+
+En este caso nosotros tenemos que sacar la funcion de membresia a partir del grafico y sus valores.
+x0=punto donde la recta corta a x
+x1=punto y1
+y1=1
+Cuando saquemos la ecuación, va a ser para el rango donde esta la recta
+
+
+2. Aplicación de los operadores difusos
+3. Aplicación de la implicación
+
+Magdami: sistema de inferencia que vemos.
+Tecnica de Zadeh: AND funcion minima, OR funcion maxima.
+Trabajamos con los grados de pertenencia que nos dieron las variables en la fuzzificacion
+Si X es bajo/medio/alto refiere al grado de pertenencia que tiene X en los conjutos difusos bajo/medio/alto
+
+4. Agregación
+Para obtener un unico valor difuso para s a partir de los valores obtenidos en el paso 3)
+Se truncan los conjuntos de salida de cada regla al valor del grado de pertenencia asociado
+Se suman los conjuntos para el paso 5)
+
+5. Defuzificación
+
+Cuando nos piden la salida de un sistema de inferencia con las entradas que fuzzificamos. 
+
