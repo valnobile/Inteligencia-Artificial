@@ -1,0 +1,26 @@
+Se trabaja con pilas de objetivos en el mundo de bloques
+Nos dan:
+	Estado inicial y final
+	Tabla con operadores, precondiciones y postcondiciones
+Los operadores son acciones que podemos realizar sobre los bloques
+No siempre se usan todos los operadores
+Las precondiciones se tienen que dar para aplicar ese operador
+Las postcondiciones es la situacion en la que van a quedar los bloques
+
+El principio de resolución de la pila de objetivos es describir como es el estado final
+Cada vez que aplique un operador, este va a ir a parar a un plan que describe las acciones para llegar al estado final
+RESOLUCION
+	1) Describir el principio de resolución (como van a quedar los bloques)
+	   Para esto describo:
+		Cuales bloques están despejados DESPEJADO(N)
+		Cuales bloques están sobre otros SOBRE(N1, N2) -> N1 esta sobre N2
+		Cuales bloques están sobre la mesa SOBRELAMESA(N)
+	   Luego de poner la descripción de a 1 por renglón, agrego otro renglón con el mismo contenido todo junto (Es el objetivo anidado)
+	2) Analizo si se cumplen los objetivos uno por uno, si se cumplen sigo y si no: 
+		Marco cual no se cumple
+		Pongo una linea negra despues del renglon que contiene todo
+		Hago el paso siguiente
+	3) El paso siguiente consiste en poner el operador que tengo que realizar para que se cumpla el objetivo que marque, esto incluye:
+		Precondiciones
+		Precondiciones anidadas
+		Reemplazo el objetivo que no se cumplia por el operador a aplicar
