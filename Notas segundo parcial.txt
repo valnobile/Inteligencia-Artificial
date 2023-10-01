@@ -1,0 +1,19 @@
+Si o si entra teorema de bayes- regla bayesiana al parcial
+Procesamiento de lenguaje natural no entra al parcial, en el final si
+Algoritmos genéticos tambien entra casi seguro
+Van a ser ejercicios tipo, cambiarán algunas cosas pero son lo mismo
+Backpropagation no entra en el practico
+
+Temas del 2° parcial: 
+Reconocimiento de patrones
+Redes neuronales
+Algoritmo genético
+Teorema de Bayes
+Backpropagation (solo teórico)
+falta deep learning (no se si esta dentro de redes neuronales)
+
+Notas del pdf de rejunte:
+Reconocimiento de patrones: pág 16 resúmen 
+Redes neuronales, backpropagation y deep learning hasta el final del resúmen, página 28 (Se puede completar con los pdf de clase)
+Algoritmos genéticos y metaheurísticas (en los pdf de la clase)
+Nota: de la 52 a la 64 son ejemplos y de la 23 a la 32 tmb
